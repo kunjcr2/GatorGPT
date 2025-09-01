@@ -5,10 +5,10 @@ GatorGPT is a lightweight transformer-based language model trained on the TinySt
 ## Model Architecture
 
 - **Base Architecture**: Transformer decoder-only
-- **Model Size**: 384-dimensional embeddings (d_model)
+- **Model Size**: 448-dimensional embeddings (d_model)
 - **Attention**: Grouped Query Attention (GQA) with 8 heads and 2 KV groups
 - **Positional Encoding**: Rotary Positional Encoding (RoPE)
-- **Feed Forward**: SwiGLU activation with ~2.5x expansion ratio
+- **Feed Forward**: SwiGLU activation with ~2x expansion ratio
 - **Normalization**: RMSNorm
 - **Vocabulary**: p50k_base (50,257 tokens)
 - **Context Length**: 1024 tokens
@@ -36,7 +36,17 @@ docker run -d --gpus all -p 8000:8000 kunjcr2/gatorgpt
 
 ### API Usage
 
-Once the server is running, you can use it like any OpenAI-compatible API:
+You can use it with vLLM:
+```curl
+python3 -m vllm.entrypoints.openai.api_server \
+  --model kunjcr2/GatorGPT \
+  --tokenizer kunjcr2/GatorGPT \
+  --max-model-len 2048 \
+  --host 0.0.0.0 \
+  --port 8000
+```
+
+Once the server is running, you can use it like any OpenAI-compatible API with Docker:
 
 ```python
 import requests
