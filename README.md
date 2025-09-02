@@ -39,8 +39,8 @@ docker run -d --gpus all -p 8000:8000 kunjcr2/gatorgpt
 You can use it with vLLM:
 ```curl
 python3 -m vllm.entrypoints.openai.api_server \
-  --model kunjcr2/GatorGPT \
-  --tokenizer kunjcr2/GatorGPT \
+  --model kunjcr2/GatorGPT2 \
+  --tokenizer kunjcr2/GatorGPT2 \
   --max-model-len 2048 \
   --host 0.0.0.0 \
   --port 8000
@@ -88,7 +88,7 @@ The model server uses the following configuration:
 
 ## Model Links
 
-🤗 HuggingFace: https://huggingface.co/kunjcr2/GatorGPT
+🤗 HuggingFace: https://huggingface.co/kunjcr2/GatorGPT2
 
 🐋 Docker Hub: https://hub.docker.com/repository/docker/kunjcr2/gatorgpt/general
 
