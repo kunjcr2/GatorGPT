@@ -1,6 +1,6 @@
 # GatorGPT
 
-GatorGPT is a lightweight transformer-based language model trained on the TinyStories dataset. It incorporates several modern architectural choices for efficient training and inference.
+GatorGPT is a lightweight 63M transformer-based language model trained on the TinyStories dataset. It incorporates several modern architectural choices for efficient training and inference.
 
 ## Model Architecture
 
@@ -16,8 +16,8 @@ GatorGPT is a lightweight transformer-based language model trained on the TinySt
 
 ## Training Metrics
 
-- **Training Data**: 214,198,685 tokens from TinyStories dataset
-- **Validation Data**: 11,310,150 tokens
+- **Training Data**: 350M tokens from TinyStories dataset
+- **Validation Data**: 17M tokens
 - **Training Batch Size**: 16
 - **Sequence Length**: 512
 - **Learning Rate**: 3e-4
